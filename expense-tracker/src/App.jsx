@@ -1,9 +1,23 @@
 import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/dashboard/Home';
+import Login from './pages/auth/Login';
+import Signup from './pages/auth/Signup';
+import Expense from './pages/dashboard/Expense';
+import Income from './pages/dashboard/Income';
 
 const App = () => {
   return (
     <div>
-      <h1 className='text-pink-500 font-bold text-4xl m-5'>App</h1>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/expense' element={<Expense />} />
+          <Route path='/income' element={<Income />} />
+        </Routes>
+      </Router>
     </div>
   )
 }
